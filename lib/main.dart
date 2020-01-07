@@ -6,11 +6,11 @@ final dice = DiceCounter();
 
 void main() {
   runApp(
-    DiceBase(),
+    DiceApp(),
   );
 }
 
-class DiceBase extends StatelessWidget {
+class DiceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,19 +28,19 @@ class DiceBase extends StatelessWidget {
           ),
         ),
         body: SafeArea(
-          child: DiceApp(),
+          child: RollTheDice(),
         ),
       ),
     );
   }
 }
 
-class DiceApp extends StatefulWidget {
+class RollTheDice extends StatefulWidget {
   @override
-  _DiceAppState createState() => _DiceAppState();
+  _RollTheDiceState createState() => _RollTheDiceState();
 }
 
-class _DiceAppState extends State<DiceApp> {
+class _RollTheDiceState extends State<RollTheDice> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -53,18 +53,18 @@ class _DiceAppState extends State<DiceApp> {
                 child: FlatButton(
                   child: Observer(
                     builder: (_) =>
-                        Image.asset('images/dice${dice.diceLeft}.png'),
+                        Image.asset('images/dice${dice.leftCount}.png'),
                   ),
-                  onPressed: dice.changeDice,
+                  onPressed: dice.roll,
                 ),
               ),
               Expanded(
                 child: FlatButton(
                   child: Observer(
                     builder: (_) =>
-                        Image.asset('images/dice${dice.diceRight}.png'),
+                        Image.asset('images/dice${dice.rightCount}.png'),
                   ),
-                  onPressed: dice.changeDice,
+                  onPressed: dice.roll,
                 ),
               ),
             ],
@@ -73,12 +73,12 @@ class _DiceAppState extends State<DiceApp> {
             padding: const EdgeInsets.all(16.0),
             child: Observer(
               builder: (_) => Text(
-                'Total ${dice.diceTotal}',
+                'Total ${dice.totalCount}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black87,
                     fontSize: 16.0,
-                    fontFamily: 'Georgia'),
+                    fontFamily: 'Verdana'),
               ),
             ),
           ),

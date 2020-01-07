@@ -9,53 +9,53 @@ part of 'dice_counter.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$DiceCounter on _DiceCounter, Store {
-  Computed<int> _$diceTotalComputed;
+  Computed<int> _$totalCountComputed;
 
   @override
-  int get diceTotal =>
-      (_$diceTotalComputed ??= Computed<int>(() => super.diceTotal)).value;
+  int get totalCount =>
+      (_$totalCountComputed ??= Computed<int>(() => super.totalCount)).value;
 
-  final _$diceLeftAtom = Atom(name: '_DiceCounter.diceLeft');
+  final _$leftCountAtom = Atom(name: '_DiceCounter.leftCount');
 
   @override
-  int get diceLeft {
-    _$diceLeftAtom.context.enforceReadPolicy(_$diceLeftAtom);
-    _$diceLeftAtom.reportObserved();
-    return super.diceLeft;
+  int get leftCount {
+    _$leftCountAtom.context.enforceReadPolicy(_$leftCountAtom);
+    _$leftCountAtom.reportObserved();
+    return super.leftCount;
   }
 
   @override
-  set diceLeft(int value) {
-    _$diceLeftAtom.context.conditionallyRunInAction(() {
-      super.diceLeft = value;
-      _$diceLeftAtom.reportChanged();
-    }, _$diceLeftAtom, name: '${_$diceLeftAtom.name}_set');
+  set leftCount(int value) {
+    _$leftCountAtom.context.conditionallyRunInAction(() {
+      super.leftCount = value;
+      _$leftCountAtom.reportChanged();
+    }, _$leftCountAtom, name: '${_$leftCountAtom.name}_set');
   }
 
-  final _$diceRightAtom = Atom(name: '_DiceCounter.diceRight');
+  final _$rightCountAtom = Atom(name: '_DiceCounter.rightCount');
 
   @override
-  int get diceRight {
-    _$diceRightAtom.context.enforceReadPolicy(_$diceRightAtom);
-    _$diceRightAtom.reportObserved();
-    return super.diceRight;
+  int get rightCount {
+    _$rightCountAtom.context.enforceReadPolicy(_$rightCountAtom);
+    _$rightCountAtom.reportObserved();
+    return super.rightCount;
   }
 
   @override
-  set diceRight(int value) {
-    _$diceRightAtom.context.conditionallyRunInAction(() {
-      super.diceRight = value;
-      _$diceRightAtom.reportChanged();
-    }, _$diceRightAtom, name: '${_$diceRightAtom.name}_set');
+  set rightCount(int value) {
+    _$rightCountAtom.context.conditionallyRunInAction(() {
+      super.rightCount = value;
+      _$rightCountAtom.reportChanged();
+    }, _$rightCountAtom, name: '${_$rightCountAtom.name}_set');
   }
 
   final _$_DiceCounterActionController = ActionController(name: '_DiceCounter');
 
   @override
-  void changeDice() {
+  void roll() {
     final _$actionInfo = _$_DiceCounterActionController.startAction();
     try {
-      return super.changeDice();
+      return super.roll();
     } finally {
       _$_DiceCounterActionController.endAction(_$actionInfo);
     }
