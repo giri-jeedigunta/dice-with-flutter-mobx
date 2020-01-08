@@ -2,5 +2,5 @@
 
 Tap the dice... Flutter app with mobx.
 
-![alt text](https://github.com/giri-jeedigunta/dice-with-flutter-mobx/blob/master/images/dice.gifs)
+![alt text](https://raw.githubusercontent.com/giri-jeedigunta/dice-with-flutter-mobx/master/images/dice.gif)
 
