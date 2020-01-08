@@ -1,3 +1,6 @@
-# Dice - A Flutter app with Mobx.
+# Dice - A Flutter App with Mobx.
 
-iOS / Android app made with flutter and mobx.
+Tap the dice... Flutter app with mobx.
+
+![alt text](https://github.com/giri-jeedigunta/dice-with-flutter-mobx/blob/master/images/dice.gifs)
+
