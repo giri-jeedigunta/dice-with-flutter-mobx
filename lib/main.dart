@@ -29,19 +29,14 @@ class DiceExample extends StatelessWidget {
           ),
         ),
         body: SafeArea(
-          child: RollTheDice(),
+          child: DiceView(),
         ),
       ),
     );
   }
 }
 
-class RollTheDice extends StatefulWidget {
-  @override
-  _RollTheDiceState createState() => _RollTheDiceState();
-}
-
-class _RollTheDiceState extends State<RollTheDice> {
+class DiceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
