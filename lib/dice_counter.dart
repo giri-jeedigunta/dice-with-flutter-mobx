@@ -10,17 +10,17 @@ class DiceCounter = _DiceCounter with _$DiceCounter;
 // The store-class
 abstract class _DiceCounter with Store {
   @observable
-  int leftCount = Random().nextInt(6) + 1;
+  int left = Random().nextInt(6) + 1;
 
   @observable
-  int rightCount = Random().nextInt(6) + 1;
+  int right = Random().nextInt(6) + 1;
 
   @computed
-  int get totalCount => leftCount + rightCount;
+  int get total => left + right;
 
   @action
   void roll() {
-    leftCount = Random().nextInt(6) + 1;
-    rightCount = Random().nextInt(6) + 1;
+    left = Random().nextInt(6) + 1;
+    right = Random().nextInt(6) + 1;
   }
 }

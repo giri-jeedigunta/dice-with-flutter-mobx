@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+
 import 'dice_counter.dart';
 
-final dice = DiceCounter();
+final diceCounter = DiceCounter();
 
 void main() {
   runApp(
-    DiceApp(),
+    DiceExample(),
   );
 }
 
-class DiceApp extends StatelessWidget {
+class DiceExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +21,7 @@ class DiceApp extends StatelessWidget {
           backgroundColor: Colors.amberAccent,
           title: Text(
             ('Tap the dice !!!').toUpperCase(),
-            style: TextStyle(
+            style: TextStyle( 
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 fontSize: 16.0,
@@ -53,18 +54,18 @@ class _RollTheDiceState extends State<RollTheDice> {
                 child: FlatButton(
                   child: Observer(
                     builder: (_) =>
-                        Image.asset('images/dice${dice.leftCount}.png'),
+                        Image.asset('images/dice${diceCounter.left}.png'),
                   ),
-                  onPressed: dice.roll,
+                  onPressed: diceCounter.roll,
                 ),
               ),
               Expanded(
                 child: FlatButton(
                   child: Observer(
                     builder: (_) =>
-                        Image.asset('images/dice${dice.rightCount}.png'),
+                        Image.asset('images/dice${diceCounter.right}.png'),
                   ),
-                  onPressed: dice.roll,
+                  onPressed: diceCounter.roll,
                 ),
               ),
             ],
@@ -73,7 +74,7 @@ class _RollTheDiceState extends State<RollTheDice> {
             padding: const EdgeInsets.all(16.0),
             child: Observer(
               builder: (_) => Text(
-                'Total ${dice.totalCount}',
+                'Total ${diceCounter.total}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
