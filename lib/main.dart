@@ -3,7 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'dice_counter.dart';
 
-final diceCounter = DiceCounter();
+final DiceCounter diceCounter = DiceCounter();
 
 void main() {
   runApp(
@@ -13,18 +13,17 @@ void main() {
 
 class DiceExample extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context) => MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.amber,
         appBar: AppBar(
           backgroundColor: Colors.amberAccent,
           title: Text(
-            ('Tap the dice !!!').toUpperCase(),
+            'Tap the dice !!!'.toUpperCase(),
             style: TextStyle( 
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
-                fontSize: 16.0,
+                fontSize: 16,
                 fontFamily: 'Hind'),
           ),
         ),
@@ -33,13 +32,11 @@ class DiceExample extends StatelessWidget {
         ),
       ),
     );
-  }
 }
 
 class DiceView extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Center(
+  Widget build(BuildContext context) => Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -66,14 +63,14 @@ class DiceView extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: Observer(
               builder: (_) => Text(
                 'Total ${diceCounter.total}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
-                    fontSize: 16.0,
+                    fontSize: 16,
                     fontFamily: 'Verdana'),
               ),
             ),
@@ -81,5 +78,4 @@ class DiceView extends StatelessWidget {
         ],
       ),
     );
-  }
 }
