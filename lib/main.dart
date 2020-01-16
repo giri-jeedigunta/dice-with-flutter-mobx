@@ -5,11 +5,7 @@ import 'dice_counter.dart';
 
 final DiceCounter diceCounter = DiceCounter();
 
-void main() {
-  runApp(
-    DiceExample(),
-  );
-}
+void main() => runApp(DiceExample());
 
 class DiceExample extends StatelessWidget {
   @override
