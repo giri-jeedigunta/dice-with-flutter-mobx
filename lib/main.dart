@@ -3,10 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'dice_counter.dart';
 
-enum DicePosition {
-  left, 
-  right
-}
+enum DicePosition { left, right }
 
 final DiceCounter diceCounter = DiceCounter();
 
@@ -49,16 +46,16 @@ class DiceView extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16),
-              child: Observer(
-                builder: (_) => Text(
+              child: Observer(builder: (_) {
+                return Text(
                   'Total ${diceCounter.total}',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
                       fontSize: 16,
                       fontFamily: 'Verdana'),
-                ),
-              ),
+                );
+              }),
             ),
           ],
         ),
@@ -72,11 +69,12 @@ class DiceButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Expanded(
-      child: FlatButton(
-        child: Observer(
-          builder: (_) => Image.asset('images/dice${dicePositionSelected==DicePosition.left?diceCounter.left:diceCounter.right}.png'),
+        child: FlatButton(
+          child: Observer(builder: (_) {
+            return Image.asset(
+                'images/dice${dicePositionSelected == DicePosition.left ? diceCounter.left : diceCounter.right}.png');
+          }),
+          onPressed: diceCounter.roll,
         ),
-        onPressed: diceCounter.roll,
-      ),
-    );
+      );
 }
