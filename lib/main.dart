@@ -63,13 +63,13 @@ class DiceView extends StatelessWidget {
 }
 
 class DiceButtonWidget extends StatelessWidget {
-  const DiceButtonWidget({this.dicePositionSelected});
+  const DiceButtonWidget({required this.dicePositionSelected});
 
   final DicePosition dicePositionSelected;
 
   @override
   Widget build(BuildContext context) => Expanded(
-        child: FlatButton(
+        child: TextButton(
           child: Observer(builder: (_) {
             return Image.asset(
                 'images/dice${dicePositionSelected == DicePosition.left ? diceCounter.left : diceCounter.right}.png');
